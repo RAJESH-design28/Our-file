@@ -1,11 +1,9 @@
-import React from "react";
-import Header from "../components/Header";
+import Hero from "../components/Home/Hero";
 
 const Home = () => {
   return (
     <div>
-      <Header />
-      <p>Home</p>
+      <Hero />
     </div>
   );
 };

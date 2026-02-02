@@ -1,18 +1,17 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
-    <header className="flex items-center  justify-between px-16 py-3 text-white bg-black  ">
-      <h1 className="text-3xl font-mediumx">Logo</h1>
+    <header className="mx-48 text-white flex items-center justify-between bg-[#005555] w-[1140px] py-6 px-8 rounded-md">
+      <h1 className="text-xl text-white/60 font-semibold">Arin Dalal</h1>
 
-      <nav className="space-x-5">
-        <a href="">Home</a>
-        <a href="">About</a>
-        <a href="">Product</a>
-        <a href="">LookBook</a>
+      <nav className="space-x-4 ">
+        <Link to="/">Home</Link>
+        <Link to="/">Services</Link>
+        <Link to="/">About </Link>
+        <Link to="/">Contact Us</Link>
       </nav>
-
-      <button className="bg-amber-400 text-black/70 px-4 py-2 rounded cursor-pointer">
-        Contact Us
-      </button>
     </header>
   );
 };

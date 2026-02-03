@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 const RootLayout = () => {
   return (
     <div className="relative">
-      <div className="mx-auto absolute z-20 top-0 left-0 pt-8">
+      <div className=" absolute inset-x-0  top-0 z-20 pt-8 ">
         <Header />
       </div>
 

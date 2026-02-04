@@ -2,7 +2,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className="relative">
+    <section className="relative h-screen">
       <div className="absolute inset-0 h-screen bg-[url('https://plus.unsplash.com/premium_photo-1661883964999-c1bcb57a7357?q=80&w=1128&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover" />
       <div className="absolute inset-0 bg-black/40 h-screen" />
       <div className="absolute inset-0 h-screen flex flex-col gap-4 justify-center items-center">

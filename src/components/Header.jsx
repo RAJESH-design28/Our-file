@@ -28,7 +28,7 @@ const Header = () => {
         {links.map((el) => (
           <NavLink
             to={el.to}
-            className={({ isActive }) => `${isActive && "text-red-500"}`}
+            className={({ isActive }) => `${isActive && "text-blue-500"}`}
           >
             {el.label}
           </NavLink>

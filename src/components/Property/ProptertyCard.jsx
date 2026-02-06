@@ -11,7 +11,7 @@ const ProptertyCard = ({ property }) => {
       />
 
       <div className="p-7.5">
-        <p className="text-[#005555] text-xl font-bold   ">{property.price}</p>
+        <p className="text-primary text-xl font-bold   ">{property.price}</p>
         <p className="my-2 text-[13px] text-[#666]">{property.address}</p>
         <p className="font-bold text-xl mb-4">{property.city}</p>
 
@@ -26,7 +26,7 @@ const ProptertyCard = ({ property }) => {
           </div>
         </div>
 
-        <button className="mt-4 bg-[#005555] px-4 py-2 rounded-full text-white">
+        <button className="mt-4 bg-primary px-4 py-2 rounded-full text-white">
           See details
         </button>
       </div>

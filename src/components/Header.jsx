@@ -21,7 +21,7 @@ const Header = () => {
     },
   ];
   return (
-    <header className="mx-auto text-white flex items-center justify-between bg-[#005555] w-[1140px] py-6 px-8 rounded-md">
+    <header className="mx-auto text-white flex items-center justify-between bg-primary w-[1140px] py-6 px-8 rounded-md">
       <h1 className="text-xl text-white/60 font-semibold">Arin </h1>
 
       <nav className="space-x-4 ">

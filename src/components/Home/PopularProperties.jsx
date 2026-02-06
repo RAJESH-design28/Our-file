@@ -58,11 +58,11 @@ const PopularProperties = () => {
   return (
     <section className="mx-auto px-3 py-16 w-324">
       <div className="flex justify-between mb-14">
-        <h1 className="text-[32px] font-medium text-blue-950">
+        <h1 className="text-[32px] font-medium text-secondary">
           Popular Properties
         </h1>
 
-        <button className="bg-[#005555] text-white py-4 px-6 rounded-full">
+        <button className="bg-primary text-white py-4 px-6 rounded-full">
           View all properties
         </button>
       </div>

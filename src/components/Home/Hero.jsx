@@ -17,7 +17,7 @@ const Hero = () => {
             placeholder="Your location e.g. Dharan"
             className="bg-white py-4 px-7 rounded-full"
           />
-          <button className="py-4 bg-[#005555] px-6 text-white rounded-full">
+          <button className="py-4 bg-primary px-6 text-white rounded-full">
             Search
           </button>
         </div>

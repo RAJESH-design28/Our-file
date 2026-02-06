@@ -12,7 +12,7 @@ const Testimonials = () => {
       id: 1,
       name: "Dave Smith",
       role: "Designer, Co-founder",
-      rating: 5,
+      rating: 2,
       quote:
         "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.",
       image:
@@ -22,7 +22,7 @@ const Testimonials = () => {
       id: 2,
       name: "James Smith",
       role: "Product Lead",
-      rating: 5,
+      rating: 3,
       quote:
         "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.",
       image:
@@ -92,7 +92,7 @@ const Testimonials = () => {
 
       <Slider ref={sliderRef} {...settings}>
         {testimonials.map((el) => (
-          <TestimonialCard />
+          <TestimonialCard testimonial={el} />
         ))}
       </Slider>
     </section>

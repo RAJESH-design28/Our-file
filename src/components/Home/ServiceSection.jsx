@@ -37,7 +37,7 @@ const ServiceSection = () => {
   return (
     <section className="bg-[#ededed] py-7.5 ">
       <div className=" mx-auto px-3 w-324">
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {featureCards.map((el) => (
             <ServiceCard service={el} />
           ))}

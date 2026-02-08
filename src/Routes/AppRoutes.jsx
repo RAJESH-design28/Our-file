@@ -6,6 +6,7 @@ import NotFound from "../pages/NotFound";
 import RootLayout from "../Layout/RootLayout";
 import Service from "../pages/Service";
 import ContactPage from "../pages/Contact";
+import PropertyDetail from "../pages/PropertyDetail";
 
 const AppRoutes = () => {
   return (
@@ -15,6 +16,7 @@ const AppRoutes = () => {
         <Route path="about" element={<About />} />
         <Route path="service" element={<Service />} />
         <Route path="contact" element={<ContactPage />} />
+        <Route path="properties/:id" element={<PropertyDetail />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>

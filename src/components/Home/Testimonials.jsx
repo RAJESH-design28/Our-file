@@ -7,6 +7,7 @@ import { useRef } from "react";
 
 const Testimonials = () => {
   const sliderRef = useRef(null);
+
   const testimonials = [
     {
       id: 1,
@@ -61,28 +62,50 @@ const Testimonials = () => {
   ];
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
+
+    swipeToSlide: true,
+
+    responsive: [
+      {
+        breakpoint: 1024, // <= 1024px
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 640, // <= 640px
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
-    <section className="py-16 mx-auto px-3 w-324">
-      <div className="flex justify-between items-center mb-12">
-        <h1 className="text-[32px] font-medium text-secondary">
+    <section className="py-16 mx-auto px-4 sm:px-6 lg:px-8 max-w-324">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-6 mb-10 sm:mb-12 lg:mb-14">
+        <h1 className="text-[28px] sm:text-[32px] font-medium text-secondary">
           Customer Says
         </h1>
-        <div className="space-x-3">
+
+        <div className="flex gap-3">
           <button
-            onClick={() => sliderRef.current.slickPrev()}
+            type="button"
+            onClick={() => sliderRef.current?.slickPrev()}
             className="bg-[#c5c5c5] text-secondary px-5 py-2 rounded-full hover:bg-secondary hover:text-white cursor-pointer"
           >
             Prev
           </button>
           <button
-            onClick={() => sliderRef.current.slickNext()}
+            type="button"
+            onClick={() => sliderRef.current?.slickNext()}
             className="bg-[#c5c5c5] text-secondary px-5 py-2 rounded-full hover:bg-secondary hover:text-white cursor-pointer"
           >
             Next
@@ -92,7 +115,9 @@ const Testimonials = () => {
 
       <Slider ref={sliderRef} {...settings}>
         {testimonials.map((el) => (
-          <TestimonialCard testimonial={el} />
+          <div key={el.id} className="px-3">
+            <TestimonialCard testimonial={el} />
+          </div>
         ))}
       </Slider>
     </section>

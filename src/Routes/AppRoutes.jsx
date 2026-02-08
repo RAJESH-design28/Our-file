@@ -5,6 +5,7 @@ import About from "../pages/About";
 import NotFound from "../pages/NotFound";
 import RootLayout from "../Layout/RootLayout";
 import Service from "../pages/Service";
+import ContactPage from "../pages/Contact";
 
 const AppRoutes = () => {
   return (
@@ -13,6 +14,7 @@ const AppRoutes = () => {
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="service" element={<Service />} />
+        <Route path="contact" element={<ContactPage />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>

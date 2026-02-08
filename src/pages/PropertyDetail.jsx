@@ -4,6 +4,7 @@ import { popularProperties } from "../components/Home/popularPropertiesData";
 
 const PropertyDetail = () => {
   const { id } = useParams();
+  console.log("id", id);
   const property = popularProperties.find(
     (item) => String(item.id) === String(id),
   );

@@ -101,7 +101,7 @@ const FindPerfectSection = () => {
                 <CountUp
                   end={el.value}
                   duration={2.5}
-                  separator=","
+                  // separator=","
                   enableScrollSpy
                   scrollSpyOnce
                 />

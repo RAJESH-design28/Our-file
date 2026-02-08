@@ -1,5 +1,6 @@
 import { Bath, Bed } from "lucide-react";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ProptertyCard = ({ property }) => {
   return (
@@ -34,9 +35,12 @@ const ProptertyCard = ({ property }) => {
           </div>
         </div>
 
-        <button className="mt-3 sm:mt-4 bg-primary px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 rounded-full text-white text-xs sm:text-sm font-medium hover:bg-primary/90 transition-colors w-full sm:w-auto">
+        <Link
+          to={`/properties/${property.id}`}
+          className="mt-3 sm:mt-4 inline-block bg-primary px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 rounded-full text-white text-xs sm:text-sm font-medium hover:bg-primary/90 transition-colors w-full sm:w-auto text-center"
+        >
           See details
-        </button>
+        </Link>
       </div>
     </article>
   );

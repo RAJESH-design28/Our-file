@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { MapPin, Clock, Mail, Phone } from "lucide-react";
 
-// Zod validation schema
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email address"),
@@ -16,16 +16,26 @@ const ContactPage = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
     reset,
   } = useForm({
     resolver: zodResolver(contactSchema),
   });
 
-  const onSubmit = (data) => {
-    console.log("Form Data:", data);
-    // Reset form after submission
-    reset();
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  const onSubmit = async (data) => {
+    try {
+      setSubmitStatus(null);
+      await axios.post("http://localhost:4000/api/contact", data);
+      setSubmitStatus({ type: "success", message: "Message sent successfully." });
+      reset();
+    } catch (error) {
+      const message =
+        error?.response?.data?.error ||
+        "Failed to send message. Please try again.";
+      setSubmitStatus({ type: "error", message });
+    }
   };
 
   const contactInfo = [
@@ -111,6 +121,17 @@ const ContactPage = () => {
                 onSubmit={handleSubmit(onSubmit)}
                 className="space-y-5 sm:space-y-6"
               >
+                {submitStatus && (
+                  <div
+                    className={`rounded-lg px-4 py-3 text-sm ${
+                      submitStatus.type === "success"
+                        ? "bg-green-50 text-green-700"
+                        : "bg-red-50 text-red-700"
+                    }`}
+                  >
+                    {submitStatus.message}
+                  </div>
+                )}
                 {/* Name and Email Row */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
                   {/* Name Field */}
@@ -193,9 +214,10 @@ const ContactPage = () => {
                 {/* Submit Button */}
                 <button
                   type="submit"
+                  disabled={isSubmitting}
                   className="bg-primary text-white px-8 sm:px-10 py-3 sm:py-4 rounded-full text-sm sm:text-base font-medium hover:bg-primary/90 transition-colors duration-300"
                 >
-                  Send Message
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </button>
               </form>
             </div>

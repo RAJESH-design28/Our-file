@@ -3,48 +3,11 @@ import ProptertyCard from "../Property/ProptertyCard";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { popularProperties } from "./popularPropertiesData";
 
 const PopularProperties = () => {
-  const properties = [
-    {
-      id: 1,
-      price: "$129,000",
-      address: "532 California Fake Ave.",
-      city: "Kathmandu, Nepal",
-      beds: 2,
-      baths: 2,
-      image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994",
-    },
-    {
-      id: 2,
-      price: "$215,000",
-      address: "Lakeside Street",
-      city: "Pokhara, Nepal",
-      beds: 3,
-      baths: 2,
-      image: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde",
-    },
-    {
-      id: 3,
-      price: "$98,500",
-      address: "Peaceful Residency",
-      city: "Bhaktapur, Nepal",
-      beds: 2,
-      baths: 1,
-      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
-    },
-    {
-      id: 4,
-      price: "$320,000",
-      address: "City View Apartments",
-      city: "Lalitpur, Nepal",
-      beds: 4,
-      baths: 3,
-      image: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde",
-    },
-  ];
+  const properties = popularProperties;
 
-  // Responsive slider settings
   const settings = {
     dots: true,
     infinite: true,
@@ -55,7 +18,7 @@ const PopularProperties = () => {
     autoplaySpeed: 2000,
     responsive: [
       {
-        breakpoint: 1024, // Large tablets and small laptops
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
@@ -63,7 +26,7 @@ const PopularProperties = () => {
         },
       },
       {
-        breakpoint: 640, // Mobile devices
+        breakpoint: 640,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,

@@ -6,7 +6,7 @@ const ServiceCard = ({ service }) => {
 
   return (
     <article className="p-7.5 bg-white w-fit text-center text-secondary ">
-      <Icon className="w-[50px] h-[50px] mx-auto mb-2.5" />
+      <Icon className="w-12.5 h-12.5 mx-auto mb-2.5" />
       <h3 className="font-medium mb-4">{service.title}</h3>
       <p className="text-sm mb-4 text-[#999">{service.description}</p>
 

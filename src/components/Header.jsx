@@ -23,8 +23,8 @@ const Header = () => {
     },
   ];
   return (
-    <header className="relative mx-auto text-white flex items-center justify-between bg-primary w-[95%] max-w-[1140px] py-6 px-4 sm:px-6 md:px-8 rounded-md">
-      <h1 className="text-xl text-white/60 font-semibold">Arin </h1>
+    <header className="relative mx-auto text-white flex items-center justify-between bg-primary w-[95%] max-w-285 py-6 px-4 sm:px-6 md:px-8 rounded-md">
+      <h1 className="text-xl text-white/60 font-semibold">Rajesh </h1>
 
       <nav className="hidden lg:flex space-x-4">
         {links.map((el) => (
